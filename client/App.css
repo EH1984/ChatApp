@@ -1,0 +1,22 @@
+/* Container for the main layout of the page */
+.main-grid-container {
+  display: inline-grid;
+  grid-template-rows: 100px auto;
+}
+
+.main-grid-item {
+  border: 1px solid white;
+  width: 100%;
+}
+
+/* Container for the inner contents of the page */
+.inner-grid-container {
+  display: inline-grid;
+  grid-template-columns: 250px auto;
+  width: 100%;
+  height: 100%;
+}
+
+.inner-grid-item {
+  border: 1px solid green;
+}
