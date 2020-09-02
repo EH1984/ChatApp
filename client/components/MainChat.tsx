@@ -5,6 +5,7 @@ import { useState, Fragment } from 'react';
 import Header from './Header';
 import Users from './Users';
 import Chat from './Chat';
+import Message from './Message';
 
 const MainChat: React.FC = () => {
   const [users, addUser] = useState<Array<User>>([
@@ -25,7 +26,14 @@ const MainChat: React.FC = () => {
               <Users users={users} />
             </div>
             <div className='inner-grid-item'>
-              <Chat />
+              <div className='chatMessage-grid-container'>
+                <div className='chatMessage-grid-item'>
+                  <Chat />
+                </div>
+                <div className='chatMessage-grid-item'>
+                  <Message />
+                </div>
+              </div>
             </div>
           </div>
         </div>

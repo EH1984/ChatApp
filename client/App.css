@@ -1,7 +1,7 @@
 /* Container for the main layout of the page */
 .main-grid-container {
   display: inline-grid;
-  grid-template-rows: 100px auto;
+  grid-template-rows: 80px auto;
 }
 
 .main-grid-item {
@@ -19,4 +19,16 @@
 
 .inner-grid-item {
   border: 1px solid green;
+}
+
+/* Chat and Message containers */
+.chatMessage-grid-container {
+  display: inline-grid;
+  grid-template-rows: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.chatMessage-grid-item {
+  border: 1px solid blue;
 }
