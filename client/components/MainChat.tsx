@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { useState, Fragment } from 'react';
 
+import { v4 as uuidv4 } from 'uuid';
+
 // Chat components
 import Header from './Header';
 import Users from './Users';
@@ -8,12 +10,23 @@ import Chat from './Chat';
 import Message from './Message';
 
 const MainChat: React.FC = () => {
+  // Users
   const [users, addUser] = useState<Array<User>>([
-    { id: '1', name: 'eugene' },
-    { id: '2', name: 'emma' },
-    { id: '3', name: 'molly' },
-    { id: '4', name: 'pugsley' }
+    { id: uuidv4(), name: 'eugene' },
+    { id: uuidv4(), name: 'emma' },
+    { id: uuidv4(), name: 'molly' },
+    { id: uuidv4(), name: 'pugsley' }
   ]);
+
+  // Messages
+  const [messages, editMessage] = useState<Array<Message>>([]);
+
+  // Add a message to the state
+  const addMessage: AddMessage = message => {
+    console.log('message from Message');
+    editMessage([...messages, { id: uuidv4(), message }]);
+  };
+
   return (
     <Fragment>
       <div className='main-grid-container vh-100 vw-100'>
@@ -31,7 +44,7 @@ const MainChat: React.FC = () => {
                   <Chat />
                 </div>
                 <div className='chatMessage-grid-item'>
-                  <Message />
+                  <Message addMessage={addMessage} />
                 </div>
               </div>
             </div>

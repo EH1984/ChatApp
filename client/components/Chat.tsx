@@ -1,7 +1,11 @@
 import * as React from 'react';
 
 const Chat: React.FC = () => {
-  return <h1>Chat</h1>;
+  return (
+    <div className='container'>
+      <div className='comment-container'></div>
+    </div>
+  );
 };
 
 export default Chat;
